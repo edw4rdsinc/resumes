@@ -19,7 +19,7 @@
 		<!-- Custom styles to match the desired vibe -->
 		<style>
 			/*
-			  CUSTOM STYLES (v3 - Further Spacing Adjustments)
+			  CUSTOM STYLES (v7 - Custom Logo + Gradient)
 			  This section overrides the default Reveal.js theme to create a look
 			  inspired by the reference websites (xlbenefits.com, foundationrp.com).
 			  - Font: 'Inter', a clean and modern sans-serif.
@@ -28,12 +28,18 @@
 			*/
 
 			:root {
-				--background-color: #0a192f; /* Deep navy blue */
 				--main-font: 'Inter', sans-serif;
 				--heading-color: #e6f1ff; /* Bright, clean white */
 				--main-color: #ccd6f6;    /* Slightly softer off-white */
 				--accent-color: #64ffda;  /* A modern, vibrant cyan/mint accent */
 				--block-background: rgba(30, 41, 59, 0.5); /* Semi-transparent dark slate for cards */
+			}
+
+			/* Keyframes for the subtle background animation */
+			@keyframes gradient-animation {
+				0% { background-position: 0% 50%; }
+				50% { background-position: 100% 50%; }
+				100% { background-position: 0% 50%; }
 			}
 
 			.reveal {
@@ -59,25 +65,25 @@
 			}
 			
 			.reveal h1 {
-				font-size: 2.6em; /* Was 3.0em */
+				font-size: 2.4em;
 				text-shadow: 0 0 10px rgba(0,0,0,0.3);
 			}
 
 			.reveal h2 {
-				font-size: 2.0em; /* Was 2.2em */
+				font-size: 1.8em;
 				border-bottom: 2px solid var(--accent-color);
 				padding-bottom: 0.2em;
-				margin-bottom: 0.5em; /* Was 0.6em */
+				margin-bottom: 0.4em;
 			}
 			
 			.reveal p {
-				font-size: 0.95em;
+				font-size: 0.9em;
 				line-height: 1.4;
 			}
 
 			/* Style for the subtitle on the title slide */
 			.reveal .subtitle {
-				font-size: 1.0em; /* Was 1.1em */
+				font-size: 0.9em;
 				font-weight: 400;
 				color: var(--main-color);
 				margin-top: 1em;
@@ -97,12 +103,12 @@
 			.reveal li {
 				background: var(--block-background);
 				border-left: 4px solid var(--accent-color);
-				padding: 0.5rem 1.1rem; /* Was 0.6rem 1.25rem */
-				margin-bottom: 0.7rem; /* Was 0.8rem */
+				padding: 0.4rem 1rem;
+				margin-bottom: 0.6rem;
 				border-radius: 0 8px 8px 0;
 				transition: background-color 0.3s ease;
-				font-size: 0.85em; /* Was 0.9em */
-				line-height: 1.45; /* Adjusted for better readability */
+				font-size: 0.8em;
+				line-height: 1.5;
 			}
 			
 			.reveal li:hover {
@@ -111,7 +117,7 @@
 			
 			/* Specific styling for the final slide */
 			.reveal .invitation-text {
-				font-size: 1.2em; /* Was 1.3em */
+				font-size: 1.1em;
 				line-height: 1.5;
 				text-align: center;
 				background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, rgba(10, 25, 47, 0) 60%);
@@ -119,27 +125,31 @@
 				border-radius: 12px;
 			}
 			
-			/* Override theme background */
-			.reveal, .reveal .backgrounds {
-				background-color: var(--background-color);
+			/* NEW - Layered Background */
+
+			/* The main background is the animated gradient */
+			.reveal .backgrounds {
+				background: linear-gradient(-45deg, #0a192f, #112240, #0a192f, #020c1b);
+				background-size: 400% 400%;
+				animation: gradient-animation 30s ease infinite;
 			}
-			
-			/* Parallax background for a subtle "flourish" */
-			.reveal .backgrounds .slide-background-content {
-				background-image: url('https://www.transparenttextures.com/patterns/clean-textile.png');
+
+			/* A pseudo-element is used to layer the tiled logo on top */
+			.reveal .backgrounds::before {
+				content: "";
+				position: absolute;
+				top: 0; left: 0; right: 0; bottom: 0;
+				/* Base64 encoded white SVG of the uploaded logo */
+    			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgODAiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0wIDgwIEwzNSAwIEw1MCAwIEwxNSA4MCBaIE0zNSAwIEw2NSAwIEw1MCAyNSBaIE01MCAwIEw4NSA4MCBMMTAwIDgwIEw2NSAwIFoiLz48L3N2Zz4=');
+				background-size: 120px; /* Controls the size of each logo in the pattern */
 				background-repeat: repeat;
-				opacity: 0.05; /* Make it very subtle */
+				opacity: 0.03; /* Makes the logo pattern extremely faint */
 			}
 
 		</style>
 	</head>
 	<body>
 		<div class="reveal">
-			<!-- This is where the parallax background is defined -->
-			<div class="backgrounds">
-				<div class="slide-background" data-background-parallax="500"></div>
-			</div>
-			
 			<div class="slides">
 				
 				<!-- Slide 1: Title -->
@@ -163,7 +173,7 @@
 				<!-- Slide 3: Core Purpose of the Role -->
 				<section>
 					<h2>Core Purpose of the Role</h2>
-					<p style="margin-bottom: 1.5em;">The PSA will design and build creative, practical solutions that combine AI and non-AI automation to:</p>
+					<p style="margin-bottom: 1.5em;">I design and build creative, practical solutions that combine AI and non-AI automation to:</p>
 					<ul>
 						<li class="fragment">Improve internal efficiency.</li>
 						<li class="fragment">Enhance customer experience.</li>
@@ -220,12 +230,15 @@
 			// - https://revealjs.com/config/
 			// - https://revealjs.com/plugins/
 			Reveal.initialize({
+				// Set a 16:9 aspect ratio for better widescreen compatibility
+				width: 1280,
+				height: 720,
+
+				// Add a small margin to prevent content from touching the edges
+				margin: 0.04,
+
 				// The "slide" transition is classic and professional, similar to PowerPoint.
 				transition: 'slide', 
-				
-				// Enables the parallax background effect.
-				parallaxBackgroundImage: 'https://www.transparenttextures.com/patterns/cubes.png',
-				parallaxBackgroundSize: '2100px 1400px',
 
 				// Other helpful settings
 				hash: true, // Puts the slide number in the URL
