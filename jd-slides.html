@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Introducing the Platform Solutions Architect</title>
+
+		<!-- Reveal.js core CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+		<!-- A dark theme that we will customize -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css" id="theme">
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+		<!-- Custom styles to match the desired vibe -->
+		<style>
+			/*
+			  CUSTOM STYLES (v3 - Further Spacing Adjustments)
+			  This section overrides the default Reveal.js theme to create a look
+			  inspired by the reference websites (xlbenefits.com, foundationrp.com).
+			  - Font: 'Inter', a clean and modern sans-serif.
+			  - Colors: A dark navy background, bright white for headings, off-white for body text,
+			    and a vibrant cyan/mint for accents.
+			*/
+
+			:root {
+				--background-color: #0a192f; /* Deep navy blue */
+				--main-font: 'Inter', sans-serif;
+				--heading-color: #e6f1ff; /* Bright, clean white */
+				--main-color: #ccd6f6;    /* Slightly softer off-white */
+				--accent-color: #64ffda;  /* A modern, vibrant cyan/mint accent */
+				--block-background: rgba(30, 41, 59, 0.5); /* Semi-transparent dark slate for cards */
+			}
+
+			.reveal {
+				font-family: var(--main-font);
+				color: var(--main-color);
+			}
+
+			.reveal .slides {
+				text-align: left; /* Default to left-align for a more professional doc feel */
+			}
+
+			.reveal h1,
+			.reveal h2,
+			.reveal h3,
+			.reveal h4,
+			.reveal h5,
+			.reveal h6 {
+				font-family: var(--main-font);
+				color: var(--heading-color);
+				font-weight: 700;
+				text-transform: none; /* Remove default uppercase for a softer look */
+				word-spacing: normal;
+			}
+			
+			.reveal h1 {
+				font-size: 2.6em; /* Was 3.0em */
+				text-shadow: 0 0 10px rgba(0,0,0,0.3);
+			}
+
+			.reveal h2 {
+				font-size: 2.0em; /* Was 2.2em */
+				border-bottom: 2px solid var(--accent-color);
+				padding-bottom: 0.2em;
+				margin-bottom: 0.5em; /* Was 0.6em */
+			}
+			
+			.reveal p {
+				font-size: 0.95em;
+				line-height: 1.4;
+			}
+
+			/* Style for the subtitle on the title slide */
+			.reveal .subtitle {
+				font-size: 1.0em; /* Was 1.1em */
+				font-weight: 400;
+				color: var(--main-color);
+				margin-top: 1em;
+			}
+
+			/* Make links and highlighted text use the accent color */
+			.reveal a {
+				color: var(--accent-color);
+			}
+
+			/* Custom styling for list items to make them pop */
+			.reveal ul {
+				list-style-type: none;
+				padding-left: 0;
+			}
+
+			.reveal li {
+				background: var(--block-background);
+				border-left: 4px solid var(--accent-color);
+				padding: 0.5rem 1.1rem; /* Was 0.6rem 1.25rem */
+				margin-bottom: 0.7rem; /* Was 0.8rem */
+				border-radius: 0 8px 8px 0;
+				transition: background-color 0.3s ease;
+				font-size: 0.85em; /* Was 0.9em */
+				line-height: 1.45; /* Adjusted for better readability */
+			}
+			
+			.reveal li:hover {
+				background: rgba(45, 55, 72, 0.7);
+			}
+			
+			/* Specific styling for the final slide */
+			.reveal .invitation-text {
+				font-size: 1.2em; /* Was 1.3em */
+				line-height: 1.5;
+				text-align: center;
+				background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, rgba(10, 25, 47, 0) 60%);
+				padding: 1.5em;
+				border-radius: 12px;
+			}
+			
+			/* Override theme background */
+			.reveal, .reveal .backgrounds {
+				background-color: var(--background-color);
+			}
+			
+			/* Parallax background for a subtle "flourish" */
+			.reveal .backgrounds .slide-background-content {
+				background-image: url('https://www.transparenttextures.com/patterns/clean-textile.png');
+				background-repeat: repeat;
+				opacity: 0.05; /* Make it very subtle */
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<!-- This is where the parallax background is defined -->
+			<div class="backgrounds">
+				<div class="slide-background" data-background-parallax="500"></div>
+			</div>
+			
+			<div class="slides">
+				
+				<!-- Slide 1: Title -->
+				<section data-text-align="center">
+					<h1>Introducing the Platform Solutions Architect</h1>
+					<p class="subtitle">
+						Bringing AI and automation together to transform how we work — and how we serve our clients.
+					</p>
+				</section>
+
+				<!-- Slide 2: Why This Role Matters Now -->
+				<section>
+					<h2>Why This Role Matters Now</h2>
+					<ul>
+						<li class="fragment">Technology is evolving faster than our processes.</li>
+						<li class="fragment">AI and non-AI automation offer new ways to save time, cut costs, and unlock growth.</li>
+						<li class="fragment">Our industry is at a point where the organizations who integrate these tools effectively will lead the market.</li>
+					</ul>
+				</section>
+
+				<!-- Slide 3: Core Purpose of the Role -->
+				<section>
+					<h2>Core Purpose of the Role</h2>
+					<p style="margin-bottom: 1.5em;">The PSA will design and build creative, practical solutions that combine AI and non-AI automation to:</p>
+					<ul>
+						<li class="fragment">Improve internal efficiency.</li>
+						<li class="fragment">Enhance customer experience.</li>
+						<li class="fragment">Enable entirely new products and services.</li>
+					</ul>
+				</section>
+
+				<!-- Slide 4: What This Looks Like in Practice -->
+				<section>
+					<h2>What This Looks Like in Practice</h2>
+					<ul>
+						<li class="fragment" data-fragment-index="1"><strong>Strategy &amp; Discovery</strong> – Identifying high-impact opportunities across the business and client projects.</li>
+						<li class="fragment" data-fragment-index="2"><strong>Design &amp; Development</strong> – Building scalable platforms and workflows.</li>
+						<li class="fragment" data-fragment-index="3"><strong>Implementation &amp; Adoption</strong> – Rolling out solutions smoothly and training users.</li>
+						<li class="fragment" data-fragment-index="4"><strong>Measurement &amp; Optimization</strong> – Tracking results and refining for greater impact.</li>
+					</ul>
+				</section>
+
+				<!-- Slide 5: Industry-Relevant Impact Examples -->
+				<section>
+					<h2>Industry-Relevant Impact Examples</h2>
+					<ul>
+						<li class="fragment"><strong>Time savings:</strong> Automating repetitive admin tasks frees up staff for higher-value work.</li>
+						<li class="fragment"><strong>Cost reduction:</strong> Streamlining workflows reduces waste and error rates.</li>
+						<li class="fragment"><strong>Customer satisfaction:</strong> Faster response times and more personalized experiences.</li>
+						<li class="fragment"><strong>Scalability:</strong> New solutions that let us handle more clients without adding overhead.</li>
+					</ul>
+				</section>
+
+				<!-- Slide 6: How This Role Will Work -->
+				<section>
+					<h2>How This Role Will Work</h2>
+					<ul>
+						<li class="fragment">Collaborative project selection with leadership.</li>
+						<li class="fragment">Hands-on design, development, and deployment of solutions.</li>
+						<li class="fragment">Continuous learning to stay ahead of both AI and non-AI automation trends.</li>
+					</ul>
+				</section>
+
+				<!-- Slide 7: Invitation -->
+				<section data-text-align="center">
+					<div class="invitation-text">
+						<p>This role is not just about technology — it’s about reimagining what’s possible.</p>
+						<p class="fragment">Together, we can build systems that make work smoother, clients happier, and growth more sustainable.</p>
+					</div>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://revealjs.com/config/
+			// - https://revealjs.com/plugins/
+			Reveal.initialize({
+				// The "slide" transition is classic and professional, similar to PowerPoint.
+				transition: 'slide', 
+				
+				// Enables the parallax background effect.
+				parallaxBackgroundImage: 'https://www.transparenttextures.com/patterns/cubes.png',
+				parallaxBackgroundSize: '2100px 1400px',
+
+				// Other helpful settings
+				hash: true, // Puts the slide number in the URL
+				history: true, // Enables browser back/forward buttons
+				center: true, // Vertically center slides
+				
+				// Dependencies can be used for plugins, but we don't need any for this basic setup.
+				dependencies: []
+			});
+		</script>
+	</body>
+</html>
